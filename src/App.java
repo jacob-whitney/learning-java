@@ -171,14 +171,62 @@ public class App {
 
          System.out.println("YOUR LOTTERY TICKETS:");
 
-         // Seed random number generator
-         int seed = (int) (System.currentTimeMillis() / 1000);
+         // Initialize new random generator object
          Random rand = new Random();
-         rand.setSeed(seed);
+  
+         //int rand_int1 = rand.nextInt(1000);
 
          // Initialize empty array for single ticket
-         int singleTicket[7] = {};
-         
+         int[] singleTicket = new int[7];
+
+         // First loop cycles through each ticket, generating
+         // random number for each
+         for (int k = 0; k < tickets; k++) {
+            
+            // Second loop cycles through the number of balls 
+            // for each ticket
+            for (int i = 0; i < balls; i++) {
+                // Fill element of array with random number
+                singleTicket[i] = rand.nextInt(large + 1);
+
+                // Third loop searches ticket array for duplicate numbers
+                int j = 0;
+                while (j < balls) {
+                    
+                    // Tests if the position of the array's new 
+                    // random number, i, is different from 
+                    // current position being tested, j
+                    if (j != i) {
+                        
+                        // Tests if i and j are duplicates
+                        if (singleTicket[i] == singleTicket[j]) {
+                            
+                            // If values of i and j are duplicates,
+                            // assign i position new random number
+                            singleTicket[i] = rand.nextInt(large + 1);
+                        
+                        } else { 
+                            
+                            // If values of i and j are different,
+                            // loop continues to test i against other
+                            // positions in array for duplicates
+                            j++;
+                        
+                        } // end if else
+                    } else {
+                            
+                            // If position i is the same as j,
+                            // loop continues to test other positions
+                            // in array for duplicates
+                            j++;
+                    
+                    } // end if else
+                } // end while loop j
+
+                // Print random number in position i
+                System.out.println(singleTicket[i]);
+            } // end for loop i
+         } // end for loop k
     } // end printTickets
     
     public static void main(String[] args) throws Exception {
@@ -193,6 +241,6 @@ public class App {
         // Call functions
         getUserInputs(numberOfBalls, largestPossibleNumber, numberOfTickets);
         printOdds(numberOfBalls, largestPossibleNumber);
-        //printTickets(numberOfBalls, largestPossibleNumber, numberOfTickets);
+        printTickets(numberOfBalls, largestPossibleNumber, numberOfTickets);
     }
 }
