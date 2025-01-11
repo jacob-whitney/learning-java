@@ -1,18 +1,15 @@
-## Getting Started
+# Lottery Numbers App
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Author Information
 
-## Folder Structure
+**Author:** Jacob Whitney  
+**Course:** Software Development I (CEN 3024)  
+**CRN:** 24204  
 
-The workspace contains two folders by default, where:
+## Project Description
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Generate a list of suggested lottery numbers using random number generation techniques. The following objectives should be met:
+- Generate numbers between 1 and largest number (user selected)
+- Generate new numbers up to number of balls (user selected)
+- Exclude duplicates in the same row
+- Generate rows of numbers up to number of tickets (user selected)
