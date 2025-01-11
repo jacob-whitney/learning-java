@@ -169,8 +169,15 @@ public class App {
          *    selected
          **********************************************************/
 
+         System.out.println("YOUR LOTTERY TICKETS:");
+
          // Seed random number generator
          int seed = (int) (System.currentTimeMillis() / 1000);
+         Random rand = new Random();
+         rand.setSeed(seed);
+
+         // Initialize empty array for single ticket
+         int singleTicket[7] = {};
          
     } // end printTickets
     
